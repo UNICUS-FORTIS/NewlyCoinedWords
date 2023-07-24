@@ -94,14 +94,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchNewWordes(_ sender: UITextField) {
+        searchTextField.becomeFirstResponder()
         if let inputText = searchTextField.text {
             if let result = wordDict[inputText] {
                 resultLabel.text = result
-            } else {
-                resultLabel.text = "검색어를 입력해주세요!"
+            } else if inputText.contains(" ") {
+                resultLabel.text = "공백은 포함 할 수 없습니다"
+            } else if inputText.count < 2 {
+                resultLabel.text = "2글자 이상 입력해 주세요"
             }
         }
-        print("test")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
