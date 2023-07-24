@@ -122,6 +122,7 @@
                     </view>
                     <connections>
                         <outlet property="mainTitle" destination="Wd3-jB-CYo" id="TqY-wR-qf3"/>
+                        <outlet property="mainView" destination="qXJ-ya-FVF" id="qiL-HE-ffh"/>
                         <outlet property="recommended" destination="NKN-pQ-9Gx" id="70m-My-Z8Y"/>
                         <outlet property="resultLabel" destination="Ow8-sJ-HuJ" id="Edc-QH-wBR"/>
                         <outlet property="searchTextField" destination="RyF-rs-smT" id="7QZ-mC-LuN"/>

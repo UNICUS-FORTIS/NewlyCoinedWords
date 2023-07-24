@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var recommended: UILabel!
     @IBOutlet var recommendedWords: [UILabel]!
@@ -40,8 +41,11 @@ class ViewController: UIViewController {
     }
 
     func setupUI() {
+        view.backgroundColor = .black
+        mainView.backgroundColor = .black
         mainTitle.text = "이게 무슨말이야!"
         mainTitle.font = UIFont.boldSystemFont(ofSize: 35)
+        mainTitle.textColor = .white
         searchTextField.backgroundColor = UIColor.systemPink
         searchTextField.font = .systemFont(ofSize: 18)
         recommended.text = "추천 검색어"
@@ -97,19 +101,12 @@ class ViewController: UIViewController {
                 resultLabel.text = "검색어를 입력해주세요!"
             }
         }
+        print("test")
     }
     
-    
-//    @objc func searchNewWords() {
-//        if let inputText = searchTextField.text {
-//            if let result = wordDict[inputText] {
-//                resultLabel.text = result
-//            } else {
-//                resultLabel.text = "검색어를 입력해주세요!"
-//            }
-//        }
-//    }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
 }
 
